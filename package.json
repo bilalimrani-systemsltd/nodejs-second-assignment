@@ -31,8 +31,15 @@
     "lint-staged": "^13.2.2",
     "prettier": "2.8.8"
   },
- "lint-staged": {
-        "*.js": "npm run lint",
-        "*.{js,css,md,html,json}": "npm run format"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  }
 }
