@@ -8,7 +8,7 @@ const UserModel = require('../models/user.model');
 const { signupValidator } = require('../requestsValidators.js');
 
 /* Signup user. */
-router.post('/signup', signupValidator, async (req, res, next) => {
+router.post('/signup', signupValidator, async (req, res) => {
   try {
     const { email } = req.body;
     const results = validationResult(req);
