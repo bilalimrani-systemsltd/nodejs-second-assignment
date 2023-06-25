@@ -11,7 +11,7 @@ const { signupValidator } = require('../requestsValidators.js');
 router.post('/signup', signupValidator, async (req, res, next) => {
   try {
     var { email } = req.body;
-    const results = validationResult(req);
+    var results = validationResult(req);
     if (!results.isEmpty()) {
       return res.send({ errors: results.array() });
     }
